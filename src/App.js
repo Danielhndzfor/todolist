@@ -80,14 +80,12 @@ const App = () => {
 
         <div key={todo.id} className="todo">
           <div className="todo-text">
-            {/* Add checkbox for toggle complete */}
             <input
               type="checkbox"
               id="completed"
               checked={todo.completed}
               onChange={() => toggleComplete(todo.id)}
             />
-            {/* if it is edit mode, display input box, else display text */}
             {todo.id === todoEditing ?
               (<input
                 type="text"
@@ -98,7 +96,6 @@ const App = () => {
             }
           </div>
           <div className="todo-actions">
-            {/* if it is edit mode, allow submit edit, else allow edit */}
             {todo.id === todoEditing ?
               (
                 <button onClick={() => submitEdits(todo)}>Submit Edits</button>
@@ -106,7 +103,6 @@ const App = () => {
               (
                 <button onClick={() => setTodoEditing(todo.id)}>Edit</button>
               )}
-
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </div>
         </div>
